@@ -1,0 +1,20 @@
+.category-tile {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 22px;
+  background: #fbf8f4;
+  align-items: center;
+}
+
+.category-thumb {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f5efe6 0%, #eae1d8 100%);
+}
+
+.category-tile span {
+  color: #272125;
+  font-weight: 600;
+}
