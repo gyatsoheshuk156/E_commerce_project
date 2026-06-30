@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import '../css/header.css'
 
 const links = [
@@ -8,6 +8,15 @@ const links = [
 ]
 
 function Header({ searchTerm, onSearchChange, cartCount }) {
+  const navigate = useNavigate()
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault()
+    if (searchTerm.trim()) {
+      navigate('/products')
+    }
+  }
+
   return (
     <header className="site-header">
       <div className="brand">MINIMA</div>
@@ -28,15 +37,16 @@ function Header({ searchTerm, onSearchChange, cartCount }) {
       </nav>
 
       <div className="header-actions">
-        <label className="search-field">
+        <form className="search-field" role="search" onSubmit={handleSearchSubmit}>
           <span aria-hidden="true">🔍</span>
           <input
             type="search"
             value={searchTerm}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder="Search products..."
+            autoComplete="off"
           />
-        </label>
+        </form>
         <NavLink to="/cart" className="cart-button" aria-label="View cart">
           <span>🛒</span>
           <span className="cart-count">{cartCount}</span>

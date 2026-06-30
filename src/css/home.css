@@ -12,6 +12,7 @@
   padding: 48px 32px;
   border-radius: 32px;
   overflow: hidden;
+  min-height: 420px;
 }
 
 .hero-card {
@@ -36,6 +37,7 @@
   position: relative;
   z-index: 2;
   max-width: 560px;
+  padding-right: 16px;
 }
 
 .eyebrow {
@@ -73,7 +75,7 @@
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -83,12 +85,36 @@
   }
 }
 
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: auto;
+    padding: 32px 24px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 720px) {
   .page-home {
     gap: 24px;
   }
 
+  .hero-section {
+    padding: 24px 16px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+  }
+
   .hero-visual .hero-card {
     padding: 22px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -45,15 +45,15 @@ function Cart({ cartItems, onQuantityChange, onRemoveItem }) {
           <div className="order-summary">
             <div className="summary-row">
               <span>Subtotal</span>
-              <strong>${subtotal.toFixed(2)}</strong>
+              <strong>₹{subtotal.toFixed(2)}</strong>
             </div>
             <div className="summary-row">
               <span>Shipping</span>
-              <strong>$0</strong>
+              <strong>₹0</strong>
             </div>
             <div className="summary-row summary-total">
               <span>Total</span>
-              <strong>${subtotal.toFixed(2)}</strong>
+              <strong>₹{subtotal.toFixed(2)}</strong>
             </div>
           </div>
 
